@@ -1,8 +1,10 @@
 for f in {1..999}
 do
-	echo "angular.module('TestController_$f', ['TestService'])
-	.controller('Controller_$f', function(\$scope, \$state, TestService){
-		console.log('enter controller_$f')
-		\$scope.test = TestService.getTest()
-	})" > "TestController_$f.js"
+	echo "angular.module('starter', [
+	['js/service/TestService.js']
+])
+.controller('Controller_$f', ['\$scope', 'TestService', function (\$scope, TestService) {
+	console.log('I\'m a controller')
+	\$scope.test = TestService.getTest()
+}])" > "TestController_$f.js"
 done

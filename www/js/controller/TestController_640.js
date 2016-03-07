@@ -1,5 +1,7 @@
-angular.module('TestController_640', ['TestService'])
-	.controller('Controller_640', function($scope, $state, TestService){
-		console.log('enter controller_640')
-		$scope.test = TestService.getTest()
-	})
+angular.module('starter', [
+	['js/service/TestService.js']
+])
+.controller('Controller_640', ['$scope', 'TestService', function ($scope, TestService) {
+	console.log('I\'m a controller')
+	$scope.test = TestService.getTest()
+}])
