@@ -1,6 +1,5 @@
-angular.module('TestService', [])
-	.factory('TestService', [function () {
-		var test = {
+module.exports = function(){
+	var test = {
 			columnA: 'A',
 			columnB: 'B',
 			columnC: 'C',
@@ -13,4 +12,4 @@ angular.module('TestService', [])
 				return test
 			}
 		};
-	}])
+}
