@@ -1,5 +1,7 @@
-angular.module('TestController_595', ['TestService'])
-	.controller('Controller_595', function($scope, $state, TestService){
-		console.log('enter controller_595')
-		$scope.test = TestService.getTest()
-	})
+define(['app', 'service/TestService'], function (app) {
+    'use strict';
+    app.register.controller('Controller_595',['$scope', '$state', 'TestService', function($scope, $state, TestService) {
+    	console.log('this is controller 595');
+    	$scope.test = TestService.getTest()
+    }]);
+});

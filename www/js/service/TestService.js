@@ -1,6 +1,6 @@
-angular.module('TestService', [])
-	.factory('TestService', [function () {
-		var test = {
+define(['app'], function (app) {
+    app.register.service('TestService',function(){
+        var test = {
 			columnA: 'A',
 			columnB: 'B',
 			columnC: 'C',
@@ -8,9 +8,11 @@ angular.module('TestService', [])
 			columnE: 'E'
 		}
 		console.log('end TestService.js, return closure')
-		return {
-			getTest: function(){
+        var exports = {
+            getTest: function(){
 				return test
 			}
-		};
-	}])
+        };
+        return exports ;
+    });
+});
