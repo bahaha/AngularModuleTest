@@ -1,6 +1,5 @@
 // Ionic Starter App
 var timestamp = new Date().getTime();
-
 define(['angularAMD'], function(angularAMD){
     'use strict';
     var app = angular.module('starter', ['ionic']);
@@ -16,6 +15,7 @@ define(['angularAMD'], function(angularAMD){
           })
     });
     app.run(function($ionicPlatform, $state, $http) {
+        console.log($ionicPlatform)
         $ionicPlatform.ready(function() {
             if(window.cordova && window.cordova.plugins.Keyboard) {
               // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
@@ -39,7 +39,6 @@ define(['angularAMD'], function(angularAMD){
         });
         $state.go('home');
     });
-
     angularAMD.bootstrap(app,false,document.getElementById('start'));
     var diff = new Date().getTime() - timestamp
     console.log('loading angular modules, using ' + diff +' ms')
